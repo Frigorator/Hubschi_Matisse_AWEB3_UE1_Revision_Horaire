@@ -3,7 +3,7 @@
 // require_once "./util/utils.php";
 // require_once "./function/user.php";
 // require_once "./function/ad.php";
-require_once "../config/dbUtil.php";
+require_once __DIR__ ."/../config/dbUtil.php";
 header('Access-Control-Allow-Origin: *');
 // header('Content-Type: application/json');
 
@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 } 
 else if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     // récupérer tout les cours
-        
+        echo ($_SERVER['REQUEST_METHOD']);
     $Classes = getAllClasses();
     $response = [];
     foreach ($Classes as $Classe) {
@@ -36,21 +36,21 @@ try
     
 } 
 else if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+$nom=filter_var($_POST['nom'],FILTER_SANITIZE_SPECIAL_CHARS);
 
-$nom=filter_input(Input_POST,'nom',FILTER_SANITIZE_SPECIAL_CHARS);
-$annee_scolaire=filter_input(Input_POST,'annee_scolaire',FILTER_SANITIZE_SPECIAL_CHARS);
-
-$sql="INSERT INTO 'Classes' ('nom', 'annee_scolaire') VALUES (".$nom.",".$annee_scolaire.")";
+$annee_scolaire=filter_var($_POST['annee_scolaire'],FILTER_SANITIZE_SPECIAL_CHARS);
+$sql="INSERT INTO Classes (nom, annee_scolaire) VALUES (?, ?)";
 try
     {
         $stmt = getDb()->prepare($sql);
-        $stmt->execute();
+        $stmt->execute([$nom, $annee_scolaire]);
         http_response_code(201); 
     }
     catch(execption)
     {
         http_response_code(502);
     }
+    // echo "test";
 }
 else if($_SERVER['REQUEST_METHOD'] === 'DELETE')
 {

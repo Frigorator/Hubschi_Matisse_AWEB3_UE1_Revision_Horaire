@@ -3,7 +3,7 @@
 // require_once "./util/utils.php";
 // require_once "./function/user.php";
 // require_once "./function/ad.php";
-require_once "../config/dbUtil.php";
+require_once __DIR__ ."/../config/dbUtil.php";
 header('Access-Control-Allow-Origin: *');
 // header('Content-Type: application/json');
 

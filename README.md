@@ -61,4 +61,10 @@ Bilan de la séance:
 
 L'api est maintenant CRUD Mais elle n'as pas été tester donc elle comporte surement des erreur
 
-Notez ce que vous avez accompli ainsi que les problèmes rencontrés et les points de blocage actuels.
+
+probleme ou élément bloquant
+
+je pensse que je ne suis pas encore très alaise avec les API mais je ne pensse pas que j'ai eu trop de probleme avec celle si
+
+Mon organisation pour se projet étais bien plus que médiocre entre le fait que j'ai passé un cour a travaillé sur un autre projet et que je n'ais pas travailler chez 
+montre mon inorganiation et le peut d'envie que j'ai de travailler dans se début d'anne
