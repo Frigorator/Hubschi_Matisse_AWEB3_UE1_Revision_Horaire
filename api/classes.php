@@ -3,7 +3,7 @@
 // require_once "./util/utils.php";
 // require_once "./function/user.php";
 // require_once "./function/ad.php";
-require_once "./config/dbUtil.php";
+require_once "../config/dbUtil.php";
 header('Access-Control-Allow-Origin: *');
 // header('Content-Type: application/json');
 
@@ -26,8 +26,6 @@ else if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     }
 try
     {
-        $stmt = getDb()->prepare($sql);
-        $stmt->execute();
         http_response_code(200); 
         echo json_encode($response);
     }
