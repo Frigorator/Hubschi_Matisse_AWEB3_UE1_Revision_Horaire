@@ -48,4 +48,17 @@ Bilan de la séance:
 
 J'ai fait la récupération d'info de la base de donnéet je commencait a faire le C de CRUD
 
+
+Date:17.9.26
+
+Objectif de la séance:
+faire l’api
+Répartition des tâches:
+
+matisse:api
+
+Bilan de la séance:
+
+L'api est maintenant CRUD Mais elle n'as pas été tester donc elle comporte surement des erreur
+
 Notez ce que vous avez accompli ainsi que les problèmes rencontrés et les points de blocage actuels.

@@ -16,7 +16,6 @@ else if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     // récupérer tout les cours
         
     $Classes = getAllClasses();
-
     $response = [];
     foreach ($Classes as $Classe) {
         $response[] = [
@@ -25,18 +24,69 @@ else if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             "annee_scolaire" => $Classe['annee_scolaire']
         ];
     }
-    http_response_code(200);
-    echo json_encode($response);
+try
+    {
+        $stmt = getDb()->prepare($sql);
+        $stmt->execute();
+        http_response_code(200); 
+        echo json_encode($response);
+    }
+    catch(execption)
+    {
+        http_response_code(500);
+    }
+    
 } 
 else if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-$code=filter_input(Input_POST,'code',FILTER_SANITIZE_SPECIAL_CHARS);
+$nom=filter_input(Input_POST,'nom',FILTER_SANITIZE_SPECIAL_CHARS);
 $annee_scolaire=filter_input(Input_POST,'annee_scolaire',FILTER_SANITIZE_SPECIAL_CHARS);
 
-$sql="INSERT INTO 'cours' ('code', 'nom') VALUES (".$code.",".$annee_scolaire.")";
-    $stmt = getDb()->prepare($sql);
-    $stmt->execute();
-    echo"test";
+$sql="INSERT INTO 'Classes' ('nom', 'annee_scolaire') VALUES (".$nom.",".$annee_scolaire.")";
+try
+    {
+        $stmt = getDb()->prepare($sql);
+        $stmt->execute();
+        http_response_code(201); 
+    }
+    catch(execption)
+    {
+        http_response_code(502);
+    }
+}
+else if($_SERVER['REQUEST_METHOD'] === 'DELETE')
+{
+    $id=filter_input(Input_POST,'id',FILTER_VALIDATE_INT);
+    $sql="DELETE from Classes where id =".$id;
+    try
+    {
+        $stmt = getDb()->prepare($sql);
+        $stmt->execute();
+        http_response_code(202); 
+    }
+    catch(execption)
+    {
+        http_response_code(502);
+    }
+}
+else if($_SERVER['REQUEST_METHOD'] === 'UPDATE')
+{
+    $id=filter_input(Input_POST,'id',FILTER_VALIDATE_INT);
+    $nom=filter_input(Input_POST,'nom',FILTER_SANITIZE_SPECIAL_CHARS);
+    $annee_scolaire=filter_input(Input_POST,'annee_scolaire',FILTER_SANITIZE_SPECIAL_CHARS);
+    $sql="Update Classes SET nom = ".$nom.", annee_scolaire=".$annee_scolaire." where id =".$id;
+
+    try
+    {
+        $stmt = getDb()->prepare($sql);
+        $stmt->execute();
+        http_response_code(202); 
+    }
+    catch(execption)
+    {
+        http_response_code(502);
+    }
+
 }
 else {
     http_response_code(405);
