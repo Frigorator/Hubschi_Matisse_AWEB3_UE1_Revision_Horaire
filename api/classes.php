@@ -51,6 +51,7 @@ try
         http_response_code(502);
     }
     // echo "test";
+    header("Refresh: 0");
 }
 else if($_SERVER['REQUEST_METHOD'] === 'DELETE')
 {
@@ -66,6 +67,7 @@ else if($_SERVER['REQUEST_METHOD'] === 'DELETE')
     {
         http_response_code(502);
     }
+    header("Refresh: 0");
 }
 else if($_SERVER['REQUEST_METHOD'] === 'UPDATE')
 {
@@ -84,7 +86,7 @@ else if($_SERVER['REQUEST_METHOD'] === 'UPDATE')
     {
         http_response_code(502);
     }
-
+header("Refresh: 0");
 }
 else {
     http_response_code(405);

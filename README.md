@@ -68,3 +68,21 @@ je pensse que je ne suis pas encore très alaise avec les API mais je ne pensse 
 
 Mon organisation pour se projet étais bien plus que médiocre entre le fait que j'ai passé un cour a travaillé sur un autre projet et que je n'ais pas travailler chez 
 montre mon inorganiation et le peut d'envie que j'ai de travailler dans se début d'anne
+
+
+Date:22.9.26
+
+Objectif de la séance:
+faire un peu de visuelle
+Répartition des tâches:
+
+matisse:visuelle
+
+Bilan de la séance:
+
+le header le footer certe sommaire on été mis la ou il faut et l'affichage des donné aussi
+
+
+probleme ou élément bloquant
+
+Aucun rencontre

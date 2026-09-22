@@ -6,7 +6,16 @@
     <title>Document</title>
 </head>
 <body>
+                <?php
+    
+    require_once "./../includes/header.php";
+    ?>
     voici les horraire
     <a href="./..">Menu</a>
+    <?php
+require_once "./../api/creneaux.php";
+require_once "./../includes/footer.php";
+    ?>
+    
 </body>
 </html>
