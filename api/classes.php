@@ -69,7 +69,7 @@ else if($_SERVER['REQUEST_METHOD'] === 'DELETE')
     }
     header("Refresh: 0");
 }
-else if($_SERVER['REQUEST_METHOD'] === 'UPDATE')
+else if($_SERVER['REQUEST_METHOD'] === 'PUT')
 {
     $id=filter_input(Input_POST,'id',FILTER_VALIDATE_INT);
     $nom=filter_input(Input_POST,'nom',FILTER_SANITIZE_SPECIAL_CHARS);

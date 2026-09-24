@@ -12,6 +12,30 @@
     ?>
     voici les cours
     <a href="./..">Menu</a>
+                <p>ajouter</p>
+                    <form action="" Method="POST">
+            <label for="">code</label>
+            <input type="text" name="code">
+            <label for="">nom</label>
+            <input type="text" name="nom">
+            <button type="submit"></button>
+        </form>
+                        <p>update</p>
+                    <form action="" Method="PUT">
+            <label for="">code</label>
+            <input type="text" name="code">
+            <label for="">nom</label>
+            <input type="text" name="nom">
+            <label for="">id</label>
+            <input type="text" name="id">
+            <button type="submit"></button>
+        </form>
+                        <p>ajouter</p>
+                    <form action="" Method="DELETE">
+            <label for="">id</label>
+            <input type="text" name="id">
+            <button type="submit"></button>
+        </form>
 
     <?php
     

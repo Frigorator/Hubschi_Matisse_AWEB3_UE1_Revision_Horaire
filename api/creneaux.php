@@ -21,7 +21,7 @@ else if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     foreach ($creneaux as $creneau) {
         $response[] = [
             "id" => (int)$creneau['id'],
-            "code" => ($creneau['jour']),
+            "jour" => ($creneau['jour']),
             "heure_debut" => $creneau['heure_debut'],
             "heure_fin" => $creneau['heure_fin'],
             "salle" => $creneau['salle']
@@ -37,12 +37,12 @@ try
         http_response_code(500);
     }
 } 
-else if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+else if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
 $classes_id=filter_input(Input_POST,'classes_id',FILTER_VALIDATE_INT);
 $cours_id=filter_input(Input_POST,'cours_id',FILTER_VALIDATE_INT);
 $jour=filter_input(Input_POST,'jour',FILTER_SANITIZE_SPECIAL_CHARS);
-$heure_debut=filter_input(Input_POST,'annee_scolaire',FILTER_VALIDATE_INT);
-$heure_fin=filter_input(Input_POST,'code',FILTER_VALIDATE_INT);
+$heure_debut=filter_input(Input_POST,'heure_debut',FILTER_VALIDATE_INT);
+$heure_fin=filter_input(Input_POST,'heure_fin',FILTER_VALIDATE_INT);
 $salle=filter_input(Input_POST,'salle',FILTER_SANITIZE_SPECIAL_CHARS);
 
 $sql="INSERT INTO 'creneaux' ('classes_id', 'cours_id','jour','annee_scolaire','code',salle) 

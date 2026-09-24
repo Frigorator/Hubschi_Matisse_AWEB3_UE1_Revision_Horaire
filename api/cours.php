@@ -35,7 +35,7 @@ try
         http_response_code(500   );
     }
 } 
-else if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+else if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
 
 $code=filter_input(Input_POST,'code',FILTER_SANITIZE_SPECIAL_CHARS);
 $annee_scolaire=filter_input(Input_POST,'annee_scolaire',FILTER_SANITIZE_SPECIAL_CHARS);
