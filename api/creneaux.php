@@ -37,7 +37,7 @@ try
         http_response_code(500);
     }
 } 
-else if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
+else if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $classes_id=filter_input(Input_POST,'classes_id',FILTER_VALIDATE_INT);
 $cours_id=filter_input(Input_POST,'cours_id',FILTER_VALIDATE_INT);
 $jour=filter_input(Input_POST,'jour',FILTER_SANITIZE_SPECIAL_CHARS);
@@ -75,7 +75,7 @@ else if($_SERVER['REQUEST_METHOD'] === 'DELETE')
     }
     header("Refresh: 0");
 }
-else if($_SERVER['REQUEST_METHOD'] === 'UPDATE')
+else if($_SERVER['REQUEST_METHOD'] === 'PUT')
 {
     $id=filter_input(Input_POST,'id',FILTER_VALIDATE_INT);
     $classes_id=filter_input(Input_POST,'classes_id',FILTER_VALIDATE_INT);

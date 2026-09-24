@@ -37,7 +37,6 @@ try
 } 
 else if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $nom=filter_var($_POST['nom'],FILTER_SANITIZE_SPECIAL_CHARS);
-
 $annee_scolaire=filter_var($_POST['annee_scolaire'],FILTER_SANITIZE_SPECIAL_CHARS);
 $sql="INSERT INTO Classes (nom, annee_scolaire) VALUES (?, ?)";
 try

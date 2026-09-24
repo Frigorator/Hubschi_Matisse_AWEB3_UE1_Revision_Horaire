@@ -35,7 +35,7 @@ try
         http_response_code(500   );
     }
 } 
-else if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
+else if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 $code=filter_input(Input_POST,'code',FILTER_SANITIZE_SPECIAL_CHARS);
 $annee_scolaire=filter_input(Input_POST,'annee_scolaire',FILTER_SANITIZE_SPECIAL_CHARS);
@@ -69,7 +69,7 @@ else if($_SERVER['REQUEST_METHOD'] === 'DELETE')
     }
     header("Refresh: 0");
 }
-else if($_SERVER['REQUEST_METHOD'] === 'UPDATE')
+else if($_SERVER['REQUEST_METHOD'] === 'PUT')
 {
     $id=filter_input(Input_POST,'id',FILTER_VALIDATE_INT);
     $code=filter_input(Input_POST,'code',FILTER_SANITIZE_SPECIAL_CHARS);
